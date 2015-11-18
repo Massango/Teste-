@@ -1,0 +1,70 @@
+﻿@model Teste2.Models.Aluguer
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Aluguer</legend>
+
+        @Html.HiddenFor(model => model.AluguerID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FilmeID, "Filmes")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FilmeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.FilmeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UtenteID, "Utentes")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UtenteID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UtenteID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataAluguer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataAluguer)
+            @Html.ValidationMessageFor(model => model.DataAluguer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDEvolucao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataDEvolucao)
+            @Html.ValidationMessageFor(model => model.DataDEvolucao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Devolvido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Devolvido)
+            @Html.ValidationMessageFor(model => model.Devolvido)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

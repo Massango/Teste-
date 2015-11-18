@@ -1,0 +1,40 @@
+﻿@model Teste2.Models.Copia
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Copia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.filme.Titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.filme.Titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado.Designacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado.Designacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disponibilidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Disponibilidade)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

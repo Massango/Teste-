@@ -1,0 +1,51 @@
+﻿@model Teste2.Models.Filme
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Filme</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sinopse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sinopse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Autores.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Autores.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Actores.NomeActor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Actores.NomeActor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categoria.Designacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoria.Designacao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FilmeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

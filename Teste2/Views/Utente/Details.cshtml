@@ -1,0 +1,51 @@
+﻿@model Teste2.Models.Utente
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Utente</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sexo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Distrito)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Distrito)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BiNr)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BiNr)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UtenteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

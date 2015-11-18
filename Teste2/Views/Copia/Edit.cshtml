@@ -1,0 +1,54 @@
+﻿@model Teste2.Models.Copia
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Copia</legend>
+
+        @Html.HiddenFor(model => model.CopiaID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FilmeID, "filme")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FilmeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.FilmeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EstadoID, "estado")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EstadoID", String.Empty)
+            @Html.ValidationMessageFor(model => model.EstadoID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Disponibilidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Disponibilidade)
+            @Html.ValidationMessageFor(model => model.Disponibilidade)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

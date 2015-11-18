@@ -1,0 +1,54 @@
+﻿@model Teste2.Models.Aluguer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Aluguer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Filmes.Titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Filmes.Titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Utentes.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utentes.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataAluguer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataAluguer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDEvolucao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDEvolucao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Devolvido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Devolvido)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

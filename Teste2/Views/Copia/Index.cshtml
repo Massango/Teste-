@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Teste2.Models.Copia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.filme.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado.Designacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponibilidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.filme.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado.Designacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponibilidade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CopiaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CopiaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CopiaID })
+        </td>
+    </tr>
+}
+
+</table>
